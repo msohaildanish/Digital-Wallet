@@ -1,0 +1,26 @@
+<h1>Transaction Page</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<form action="" method = "post">
+    {% csrf_token %}
+    <label for="ID">Store ID</label>
+    <input type="number" name="ID" id="ID">
+    <br>
+    <label for="amount">Amount</label>
+    <input type ="number" name="amount" id ="amount">
+    <br>
+    <label for="method">Select:</label>
+    <select name="method" id="method">
+        <option>Debit</option>
+        <option>Credit</option>
+    </select>
+    <br>
+    <!--
+    <label for="expiry_time">Expiry time(Only Credit)</label>
+    <input type="datetime" name="expiry_time" id="expiry_time">
+    -->
+    <label for="remarks">Remarks</label>
+    <input type="text" name="remarks" id="remarks">
+    <br>
+    <input type="submit" value="Submit">
+</form>
